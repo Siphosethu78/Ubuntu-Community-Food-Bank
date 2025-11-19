@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Ubuntu Community Food Bank - Our Mission & Vision</title>
+    <meta name="description" content="Learn about Ubuntu Community Food Bank's mission to fight hunger in Johannesburg. Our story, values, and commitment to the community since 2018.">
+    <style>
+        /* ===== BASE STYLES WITH ANIMATIONS ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
+            50% { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); }
+        }
+
+        /* ===== HEADER ANIMATIONS ===== */
+        header {
+            background: linear-gradient(135deg, #2E7D32 0%, #4CAF50 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        header h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.8rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== FIXED NAVIGATION - NO MOVEMENT ===== */
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-weight: 600;
+            display: block;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        nav a:hover::before {
+            left: 100%;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        nav a[aria-current="page"] {
+            background-color: rgba(255, 255, 255, 0.35);
+            font-weight: bold;
+            animation: currentPageGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes currentPageGlow {
+            from { 
+                box-shadow: 0 0 10px rgba(255,255,255,0.5);
+                background-color: rgba(255, 255, 255, 0.35);
+            }
+            to { 
+                box-shadow: 0 0 20px rgba(255,255,255,0.8);
+                background-color: rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        /* ===== MAIN CONTENT STYLES ===== */
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #2E7D32;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 3rem;
+            background: linear-gradient(135deg, #2E7D32, #4CAF50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px rgba(46, 125, 50, 0.3); }
+            to { text-shadow: 0 0 20px rgba(76, 175, 80, 0.5); }
+        }
+
+        /* ===== CONTENT SECTIONS ===== */
+        .content-section {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%);
+            padding: 3rem;
+            margin: 3rem 0;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(180deg, #4CAF50 0%, #2E7D32 100%);
+            transition: width 0.4s ease;
+        }
+
+        .content-section:hover::before {
+            width: 10px;
+        }
+
+        .content-section:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 70px rgba(0,0,0,0.2);
+        }
+
+        h3 {
+            color: #2E7D32;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        h3::before {
+            content: '✓';
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+            animation: iconBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* ===== TIMELINE ANIMATIONS ===== */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(180deg, #4CAF50, #2E7D32);
+            border-radius: 10px;
+            animation: timelineGrow 2s ease-out;
+        }
+
+        @keyframes timelineGrow {
+            from { height: 0; }
+            to { height: 100%; }
+        }
+
+        .timeline-item {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%);
+            padding: 2rem;
+            margin: 3rem 0;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            position: relative;
+            width: 45%;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+            animation: timelineItemEntrance 0.8s ease-out forwards;
+            backdrop-filter: blur(10px);
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.6s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes timelineItemEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-left: 0;
+            margin-right: auto;
+            transform-origin: left center;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: auto;
+            margin-right: 0;
+            transform-origin: right center;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 25px;
+            height: 25px;
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            border-radius: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.5);
+            animation: pulseDot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { transform: translateY(-50%) scale(1); }
+            50% { transform: translateY(-50%) scale(1.2); }
+        }
+
+        .timeline-item:nth-child(odd)::before {
+            right: -12px;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -12px;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+        }
+
+        .year {
+            font-weight: bold;
+            color: #4CAF50;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            background: linear-gradient(135deg, #E8F5E8, #C8E6C9);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            animation: yearGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes yearGlow {
+            from { box-shadow: 0 0 10px rgba(76, 175, 80, 0.3); }
+            to { box-shadow: 0 0 20px rgba(76, 175, 80, 0.6); }
+        }
+
+        /* ===== VALUES GRID ANIMATIONS ===== */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: linear-gradient(135deg, #E8F5E8 0%, #C8E6C9 100%);
+            padding: 3rem 2rem;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            border-left: 6px solid #4CAF50;
+            opacity: 0;
+            animation: valueCardEntrance 0.8s ease-out forwards;
+        }
+
+        .value-card:nth-child(1) { animation-delay: 0.1s; }
+        .value-card:nth-child(2) { animation-delay: 0.2s; }
+        .value-card:nth-child(3) { animation-delay: 0.3s; }
+        .value-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes valueCardEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(50px) rotateX(90deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.1);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+
+        .value-card:hover::before {
+            transform: rotate(45deg) translate(50px, 50px);
+        }
+
+        .value-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 30px 60px rgba(76, 175, 80, 0.3);
+            border-left: 6px solid #2E7D32;
+        }
+
+        .value-icon {
+            font-size: 4.5rem;
+            margin-bottom: 2rem;
+            display: block;
+            animation: iconFloat 3s ease-in-out infinite;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(2deg); }
+            66% { transform: translateY(-5px) rotate(-2deg); }
+        }
+
+        .value-card h4 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .value-card p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* ===== FOOTER ANIMATIONS ===== */
+        footer {
+            background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #4CAF50, transparent);
+            animation: slide 3s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        footer p {
+            animation: pulse 2s ease-in-out infinite;
+            font-size: 1.1rem;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            nav a {
+                display: block;
+                text-align: center;
+                margin: 0.25rem 0;
+                padding: 1rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .content-section {
+                padding: 2rem;
+                margin: 2rem 0;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+                margin-right: 0 !important;
+            }
+            
+            .timeline-item::before {
+                left: -37px !important;
+                right: auto !important;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .value-card {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .content-section {
+                padding: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .timeline-item {
+                width: calc(100% - 40px);
+                margin-left: 40px !important;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ubuntu Community Food Bank</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ABOUT.html" aria-current="page">About Us</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="get-involved.html">Get Involved</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>About Us</h2>
+        
+        <div class="content-section">
+            <p>Founded in 2018 by local volunteers, Ubuntu Community Food Bank is dedicated to reducing hunger and promoting nutrition awareness across Johannesburg. Our name "Ubuntu" reflects our philosophy: "I am because we are" - we believe in community support and collective responsibility.</p>
+        </div>
+
+        <div class="content-section">
+            <h3>Our Mission</h3>
+            <p>To fight hunger by ensuring that vulnerable families have access to healthy, nutritious food while promoting sustainable solutions to food insecurity through education and community empowerment.</p>
+        </div>
+
+        <div class="content-section">
+            <h3>Our Vision</h3>
+            <p>A future where no South African family goes to bed hungry, and every community has the resources and knowledge to maintain food security and nutritional well-being.</p>
+        </div>
+
+        <div class="content-section">
+            <h3>Our Journey</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="year">2018</div>
+                    <p>Founded by community volunteers with a small food distribution center in Johannesburg Central, serving 50 families monthly</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2020</div>
+                    <p>Expanded to Soweto branch and launched School Nutrition Program, reaching 500+ children weekly</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2022</div>
+                    <p>Opened Alexandra branch and introduced Nutrition Awareness Workshops, training 200+ families</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2024</div>
+                    <p>Reached milestone of serving 5,000+ families across Johannesburg with comprehensive food support</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>Our Values</h3>
+            <div class="values-grid">
+                <div class="value-card">
+                    <span class="value-icon">🤝</span>
+                    <h4>Community</h4>
+                    <p>We believe in the power of community support and collective action to create lasting change</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">💚</span>
+                    <h4>Compassion</h4>
+                    <p>We serve with empathy, dignity, and understanding for those experiencing food insecurity</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">🌟</span>
+                    <h4>Integrity</h4>
+                    <p>We maintain complete transparency and accountability in all our operations and finances</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">🌱</span>
+                    <h4>Sustainability</h4>
+                    <p>We work towards long-term solutions that empower communities to achieve food independence</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ubuntu Community Food Bank | All Rights Reserved</p>
+        <p style="margin-top: 1rem; opacity: 0.9;">Building a hunger-free community, one family at a time</p>
+    </footer>
+</body>
+</html>

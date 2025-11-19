@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Involved | Ubuntu Community Food Bank - Volunteer & Donate</title>
+    <meta name="description" content="Join Ubuntu Community Food Bank in fighting hunger. Volunteer your time, donate funds, or sponsor our programs in Johannesburg.">
+    <style>
+        /* ===== BASE STYLES WITH ANIMATIONS ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
+            50% { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); }
+        }
+
+        /* ===== HEADER ANIMATIONS ===== */
+        header {
+            background: linear-gradient(135deg, #2E7D32 0%, #4CAF50 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        header h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.8rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== FIXED NAVIGATION - NO MOVEMENT ===== */
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-weight: 600;
+            display: block;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        nav a:hover::before {
+            left: 100%;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        nav a[aria-current="page"] {
+            background-color: rgba(255, 255, 255, 0.35);
+            font-weight: bold;
+            animation: currentPageGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes currentPageGlow {
+            from { 
+                box-shadow: 0 0 10px rgba(255,255,255,0.5);
+                background-color: rgba(255, 255, 255, 0.35);
+            }
+            to { 
+                box-shadow: 0 0 20px rgba(255,255,255,0.8);
+                background-color: rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        /* ===== MAIN CONTENT STYLES ===== */
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #2E7D32;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 3rem;
+            background: linear-gradient(135deg, #2E7D32, #4CAF50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px rgba(46, 125, 50, 0.3); }
+            to { text-shadow: 0 0 20px rgba(76, 175, 80, 0.5); }
+        }
+
+        .page-intro {
+            text-align: center;
+            color: #666;
+            font-size: 1.3rem;
+            margin-bottom: 4rem;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* ===== INVOLVEMENT OPTIONS GRID ===== */
+        .involvement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .involvement-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%);
+            padding: 3rem 2.5rem;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            animation: cardEntrance 0.8s ease-out forwards;
+        }
+
+        .involvement-card:nth-child(1) { animation-delay: 0.1s; }
+        .involvement-card:nth-child(2) { animation-delay: 0.2s; }
+        .involvement-card:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes cardEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .involvement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #4CAF50, #2E7D32);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .involvement-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .involvement-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 35px 70px rgba(0,0,0,0.25);
+        }
+
+        .card-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            display: block;
+            animation: iconFloat 3s ease-in-out infinite;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .involvement-card h3 {
+            color: #2E7D32;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .involvement-card p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        /* ===== BUTTON STYLES ===== */
+        .action-button {
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .action-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .action-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .action-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(76, 175, 80, 0.6);
+            background: linear-gradient(135deg, #45a049 0%, #1B5E20 100%);
+        }
+
+        /* ===== VOLUNTEER FORM STYLES ===== */
+        .form-section {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%);
+            padding: 3rem;
+            margin: 4rem 0;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            backdrop-filter: blur(10px);
+            animation: formEntrance 1s ease-out 0.5s both;
+        }
+
+        @keyframes formEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-section h3 {
+            color: #2E7D32;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: bold;
+            color: #2E7D32;
+            font-size: 1.1rem;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #4CAF50;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        /* ===== IMPACT STATS ===== */
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .impact-stat {
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            animation: statPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes statPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .impact-stat:hover {
+            transform: scale(1.05);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* ===== FOOTER ANIMATIONS ===== */
+        footer {
+            background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #4CAF50, transparent);
+            animation: slide 3s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        footer p {
+            animation: pulse 2s ease-in-out infinite;
+            font-size: 1.1rem;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            nav a {
+                display: block;
+                text-align: center;
+                margin: 0.25rem 0;
+                padding: 1rem;
+            }
+            
+            .involvement-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .impact-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .impact-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-section {
+                padding: 2rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ubuntu Community Food Bank</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ABOUT.html">About Us</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="get-involved.html" aria-current="page">Get Involved</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Get Involved</h2>
+        <p class="page-intro">Join us in the fight against hunger. Your support makes a real difference in our community.</p>
+
+        <div class="involvement-grid">
+            <div class="involvement-card">
+                <span class="card-icon">💰</span>
+                <h3>Donate Funds</h3>
+                <p>Your financial contributions help us purchase food, maintain our facilities, and expand our programs to reach more families in need.</p>
+                <button class="action-button">Donate Now</button>
+            </div>
+
+            <div class="involvement-card">
+                <span class="card-icon">🤝</span>
+                <h3>Volunteer</h3>
+                <p>Join our team of dedicated volunteers. Help with food distribution, administrative tasks, or community outreach programs.</p>
+                <button class="action-button">Volunteer Today</button>
+            </div>
+
+            <div class="involvement-card">
+                <span class="card-icon">🏢</span>
+                <h3>Corporate Partnership</h3>
+                <p>Partner with us through corporate sponsorship, employee volunteering, or in-kind donations to make a larger impact.</p>
+                <button class="action-button">Partner With Us</button>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h3>Volunteer Sign-Up Form</h3>
+            <form id="volunteerForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="availability">Weekly Availability</label>
+                        <select id="availability" name="availability">
+                            <option value="">Select availability</option>
+                            <option value="1-5">1-5 hours per week</option>
+                            <option value="5-10">5-10 hours per week</option>
+                            <option value="10-20">10-20 hours per week</option>
+                            <option value="20+">20+ hours per week</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="skills">Skills & Interests</label>
+                    <textarea id="skills" name="skills" rows="4" placeholder="Tell us about your skills, experience, or areas you'd like to help with..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="preferredRole">Preferred Volunteer Role</label>
+                    <select id="preferredRole" name="preferredRole">
+                        <option value="">Select preferred role</option>
+                        <option value="distribution">Food Distribution</option>
+                        <option value="admin">Administrative Support</option>
+                        <option value="outreach">Community Outreach</option>
+                        <option value="education">Nutrition Education</option>
+                        <option value="driving">Delivery Driver</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="action-button" style="width: 100%; margin-top: 1rem;">Submit Volunteer Application</button>
+            </form>
+        </div>
+
+        <div class="impact-stats">
+            <div class="impact-stat">
+                <span class="stat-number">250+</span>
+                <span class="stat-label">Active Volunteers</span>
+            </div>
+            <div class="impact-stat">
+                <span class="stat-number">R500K+</span>
+                <span class="stat-label">Raised This Year</span>
+            </div>
+            <div class="impact-stat">
+                <span class="stat-number">15K+</span>
+                <span class="stat-label">Volunteer Hours</span>
+            </div>
+            <div class="impact-stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Corporate Partners</span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ubuntu Community Food Bank | All Rights Reserved</p>
+        <p style="margin-top: 1rem; opacity: 0.9;">Your involvement creates lasting change</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const volunteerForm = document.getElementById('volunteerForm');
+            
+            volunteerForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simple form validation
+                const fullName = document.getElementById('fullName').value;
+                const email = document.getElementById('email').value;
+                
+                if (fullName && email) {
+                    alert('Thank you for your interest in volunteering! We will contact you soon.');
+                    volunteerForm.reset();
+                } else {
+                    alert('Please fill in all required fields.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

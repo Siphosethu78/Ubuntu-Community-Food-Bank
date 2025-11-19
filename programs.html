@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programs | Ubuntu Community Food Bank - Food Assistance & Nutrition</title>
+    <meta name="description" content="Explore Ubuntu Community Food Bank's programs including food parcel drives, school initiatives, and nutrition awareness workshops in Johannesburg.">
+    <style>
+        /* ===== BASE STYLES WITH ANIMATIONS ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
+            50% { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); }
+        }
+
+        /* ===== HEADER ANIMATIONS ===== */
+        header {
+            background: linear-gradient(135deg, #2E7D32 0%, #4CAF50 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        header h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.8rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== FIXED NAVIGATION - NO MOVEMENT ===== */
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-weight: 600;
+            display: block;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        nav a:hover::before {
+            left: 100%;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        nav a[aria-current="page"] {
+            background-color: rgba(255, 255, 255, 0.35);
+            font-weight: bold;
+            animation: currentPageGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes currentPageGlow {
+            from { 
+                box-shadow: 0 0 10px rgba(255,255,255,0.5);
+                background-color: rgba(255, 255, 255, 0.35);
+            }
+            to { 
+                box-shadow: 0 0 20px rgba(255,255,255,0.8);
+                background-color: rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        /* ===== MAIN CONTENT STYLES ===== */
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #2E7D32;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 3rem;
+            background: linear-gradient(135deg, #2E7D32, #4CAF50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px rgba(46, 125, 50, 0.3); }
+            to { text-shadow: 0 0 20px rgba(76, 175, 80, 0.5); }
+        }
+
+        .page-intro {
+            text-align: center;
+            color: #666;
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* ===== PROGRAM CARDS ANIMATIONS ===== */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .program-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            opacity: 0;
+            animation: programCardEntrance 0.8s ease-out forwards;
+            backdrop-filter: blur(10px);
+        }
+
+        .program-card:nth-child(1) { animation-delay: 0.1s; }
+        .program-card:nth-child(2) { animation-delay: 0.2s; }
+        .program-card:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes programCardEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(60px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #4CAF50, #2E7D32);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .program-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .program-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 35px 70px rgba(0,0,0,0.25);
+        }
+
+        .program-image-container {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .program-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.6s ease;
+            filter: brightness(0.9);
+        }
+
+        .program-card:hover .program-image {
+            transform: scale(1.1) rotate(1deg);
+            filter: brightness(1);
+        }
+
+        .program-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            animation: badgePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes badgePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .program-content {
+            padding: 2.5rem;
+        }
+
+        .program-title {
+            color: #2E7D32;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            animation: titleSlideIn 0.8s ease-out;
+        }
+
+        @keyframes titleSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .program-title::before {
+            content: '🍎';
+            font-size: 2rem;
+            animation: iconSpin 3s ease-in-out infinite;
+        }
+
+        @keyframes iconSpin {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(10deg) scale(1.1); }
+        }
+
+        .program-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .program-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .program-features li {
+            padding: 0.8rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            color: #555;
+            transition: all 0.3s ease;
+        }
+
+        .program-features li::before {
+            content: '✓';
+            color: #4CAF50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            width: 25px;
+            height: 25px;
+            background: #E8F5E8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .program-features li:hover::before {
+            background: #4CAF50;
+            color: white;
+            transform: scale(1.2);
+        }
+
+        .program-features li:hover {
+            transform: translateX(10px);
+            color: #2E7D32;
+        }
+
+        .program-stats {
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+            text-align: center;
+            animation: statsPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes statsPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        /* ===== FOOTER ANIMATIONS ===== */
+        footer {
+            background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #4CAF50, transparent);
+            animation: slide 3s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        footer p {
+            animation: pulse 2s ease-in-out infinite;
+            font-size: 1.1rem;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            nav a {
+                display: block;
+                text-align: center;
+                margin: 0.25rem 0;
+                padding: 1rem;
+            }
+            
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .program-card {
+                margin: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ubuntu Community Food Bank</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ABOUT.html">About Us</a></li>
+                <li><a href="programs.html" aria-current="page">Programs</a></li>
+                <li><a href="get-involved.html">Get Involved</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Our Programs</h2>
+        <p class="page-intro">Discover how we're fighting hunger and promoting nutrition in Johannesburg through our comprehensive programs.</p>
+
+        <div class="programs-grid">
+            <div class="program-card">
+                <div class="program-image-container">
+                    <img src="https://images.theconversation.com/files/329709/original/file-20200422-47810-r6jp75.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=754&fit=clip" 
+                         alt="Food parcel distribution" 
+                         class="program-image">
+                    <div class="program-badge">Monthly Program</div>
+                </div>
+                <div class="program-content">
+                    <h3 class="program-title">Food Parcel Drives</h3>
+                    <p class="program-description">Monthly distribution of nutritious food parcels to vulnerable families across our three branches in Johannesburg.</p>
+                    <ul class="program-features">
+                        <li>Monthly distributions at all locations</li>
+                        <li>Nutritionally balanced food parcels</li>
+                        <li>Family-sized portions for 2 weeks</li>
+                        <li>Special dietary accommodations available</li>
+                    </ul>
+                    <div class="program-stats">
+                        <strong>1,200+ families served monthly</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image-container">
+                    <img src="https://images.caxton.co.za/wp-content/uploads/sites/3/2021/09/FooddonationMotlh_27390.jpeg" 
+                         alt="School food program" 
+                         class="program-image">
+                    <div class="program-badge">School Program</div>
+                </div>
+                <div class="program-content">
+                    <h3 class="program-title">School Initiatives</h3>
+                    <p class="program-description">Partnering with local schools to provide daily meals and nutrition education to children in need.</p>
+                    <ul class="program-features">
+                        <li>Daily nutritious school meals</li>
+                        <li>Nutrition and health education</li>
+                        <li>Weekend food packs for families</li>
+                        <li>Teacher training programs</li>
+                    </ul>
+                    <div class="program-stats">
+                        <strong>15 schools partnered across Johannesburg</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image-container">
+                    <img src="https://imageio.forbes.com/specials-images/imageserve/61f2f08f19f3c3549be22686/Teacher-explaining-fruits-to-students-in-classroom/0x0.jpg?format=jpg&crop=1013,760,x77,y0,safe&width=960" 
+                         alt="Nutrition workshop" 
+                         class="program-image">
+                    <div class="program-badge">Education Program</div>
+                </div>
+                <div class="program-content">
+                    <h3 class="program-title">Nutrition Awareness</h3>
+                    <p class="program-description">Workshops and training sessions teaching families about healthy eating, budgeting, and meal planning.</p>
+                    <ul class="program-features">
+                        <li>Weekly nutrition workshops</li>
+                        <li>Cooking demonstrations</li>
+                        <li>Budget-friendly meal planning</li>
+                        <li>Community garden training</li>
+                    </ul>
+                    <div class="program-stats">
+                        <strong>200+ families trained annually</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ubuntu Community Food Bank | All Rights Reserved</p>
+        <p style="margin-top: 1rem; opacity: 0.9;">Empowering communities through nutrition and education</p>
+    </footer>
+</body>
+</html>
