@@ -239,6 +239,21 @@
             line-height: 1.6;
         }
 
+        .location-highlight {
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%) !important;
+            color: white;
+            border: 3px solid #45a049;
+        }
+
+        .location-highlight .contact-details h4,
+        .location-highlight .contact-details p {
+            color: white;
+        }
+
+        .location-highlight .contact-icon {
+            color: white;
+        }
+
         /* ===== CONTACT FORM STYLES ===== */
         .contact-form {
             background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%);
@@ -361,22 +376,42 @@
             font-size: 2rem;
         }
 
-        .map-placeholder {
-            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
-            height: 400px;
+        .map-container {
             border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #2E7D32;
-            font-size: 1.2rem;
-            font-weight: bold;
-            animation: mapPulse 3s ease-in-out infinite;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            height: 400px;
+            animation: mapEntrance 1s ease-out 0.8s both;
         }
 
-        @keyframes mapPulse {
-            0%, 100% { opacity: 0.9; }
-            50% { opacity: 1; }
+        @keyframes mapEntrance {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .map-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(0.2) contrast(1.1);
+            transition: filter 0.3s ease;
+        }
+
+        .map-iframe:hover {
+            filter: grayscale(0) contrast(1);
+        }
+
+        .map-note {
+            text-align: center;
+            margin-top: 1rem;
+            color: #666;
+            font-style: italic;
         }
 
         /* ===== FOOTER ANIMATIONS ===== */
@@ -438,7 +473,7 @@
                 padding: 2rem;
             }
             
-            .map-placeholder {
+            .map-container {
                 height: 300px;
             }
         }
@@ -456,6 +491,10 @@
             
             .map-section {
                 padding: 2rem;
+            }
+            
+            .map-container {
+                height: 250px;
             }
         }
     </style>
@@ -481,6 +520,18 @@
             <div class="contact-info">
                 <h3>Get In Touch</h3>
                 
+                <div class="contact-item location-highlight">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h4>Main Location</h4>
+                        <p><strong>Ubuntu Community Food Bank</strong><br>
+                        123 Main Street<br>
+                        Johannesburg Central<br>
+                        Johannesburg, 2000<br>
+                        South Africa</p>
+                    </div>
+                </div>
+
                 <div class="contact-item">
                     <div class="contact-icon">📧</div>
                     <div class="contact-details">
@@ -501,22 +552,15 @@
                 </div>
 
                 <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <div class="contact-details">
-                        <h4>Visit Us</h4>
-                        <p><strong>Johannesburg Central:</strong><br>123 Main Street, Johannesburg</p>
-                        <p><strong>Soweto Branch:</strong><br>456 Vilakazi Street, Soweto</p>
-                        <p><strong>Alexandra Branch:</strong><br>789 London Road, Alexandra</p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
                     <div class="contact-icon">🕒</div>
                     <div class="contact-details">
                         <h4>Operating Hours</h4>
-                        <p><strong>Food Distribution:</strong><br>Mon, Wed, Fri: 9:00 AM - 3:00 PM</p>
-                        <p><strong>Office Hours:</strong><br>Mon-Fri: 8:00 AM - 5:00 PM</p>
-                        <p><strong>Weekend:</strong><br>By appointment only</p>
+                        <p><strong>Food Distribution:</strong><br>
+                        Mon, Wed, Fri: 9:00 AM - 3:00 PM</p>
+                        <p><strong>Office Hours:</strong><br>
+                        Mon-Fri: 8:00 AM - 5:00 PM</p>
+                        <p><strong>Weekend:</strong><br>
+                        By appointment only</p>
                     </div>
                 </div>
             </div>
@@ -563,14 +607,19 @@
         </div>
 
         <div class="map-section">
-            <h3>Find Our Locations</h3>
-            <div class="map-placeholder">
-                Interactive Map - Johannesburg Food Bank Locations
-                <br>
-                <span style="font-size: 1rem; margin-top: 1rem; display: block;">
-                    (Map would show our three branches across Johannesburg)
-                </span>
+            <h3>Find Our Location</h3>
+            <div class="map-container">
+                <!-- Google Maps Embed -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.11228429191!2d28.04412817501902!3d-26.19587787707126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c1b6c2d8e3f%3A0x5f5e5b5e5e5e5e5e!2sJohannesburg%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1641234567890!5m2!1sen!2sza" 
+                    class="map-iframe"
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Ubuntu Community Food Bank Location in Johannesburg">
+                </iframe>
             </div>
+            <p class="map-note">Visit us at our central Johannesburg location - easy to find and accessible by public transport</p>
         </div>
     </main>
 
@@ -599,6 +648,19 @@
                     alert('Please fill in all required fields.');
                 }
             });
+
+            // Add some interactive effects to the map container
+            const mapContainer = document.querySelector('.map-container');
+            if (mapContainer) {
+                mapContainer.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.02)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                mapContainer.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            }
         });
     </script>
 </body>
