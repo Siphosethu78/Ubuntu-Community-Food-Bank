@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Block sensitive directories
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /logs/
+
+# Allow search engines to access CSS and JS
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://www.ubuntufoodbank.org/sitemap.xml
+
+# Crawl delay (optional - be respectful to server)
+Crawl-delay: 1

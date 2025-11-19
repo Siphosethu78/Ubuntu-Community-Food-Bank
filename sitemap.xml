@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Home Page - Highest Priority -->
+  <url>
+    <loc>https://www.ubuntufoodbank.org/index.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubuntufoodbank.org/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.ubuntufoodbank.org/index.html"/>
+  </url>
+
+  <!-- About Us Page -->
+  <url>
+    <loc>https://www.ubuntufoodbank.org/about.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubuntufoodbank.org/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.ubuntufoodbank.org/about.html"/>
+  </url>
+
+  <!-- Programs Page -->
+  <url>
+    <loc>https://www.ubuntufoodbank.org/programs.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubuntufoodbank.org/programs.html"/>
+    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.ubuntufoodbank.org/programs.html"/>
+  </url>
+
+  <!-- Get Involved Page -->
+  <url>
+    <loc>https://www.ubuntufoodbank.org/get-involved.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubuntufoodbank.org/get-involved.html"/>
+    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.ubuntufoodbank.org/get-involved.html"/>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://www.ubuntufoodbank.org/contact.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubuntufoodbank.org/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.ubuntufoodbank.org/contact.html"/>
+  </url>
+
+  <!-- Service Enquiry Page -->
+  <url>
+    <loc>https://www.ubuntufoodbank.org/enquiry.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubuntufoodbank.org/enquiry.html"/>
+    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.ubuntufoodbank.org/enquiry.html"/>
+  </url>
+
+  <!-- Program Detail Pages (Future Expansion) -->
+  <url>
+    <loc>https://www.ubuntufoodbank.org/programs/food-parcels.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubuntufoodbank.org/programs/food-parcels.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.ubuntufoodbank.org/programs/school-initiatives.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubuntufoodbank.org/programs/school-initiatives.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.ubuntufoodbank.org/programs/nutrition-workshops.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubuntufoodbank.org/programs/nutrition-workshops.html"/>
+  </url>
+
+  <!-- Location Pages (Future Expansion) -->
+  <url>
+    <loc>https://www.ubuntufoodbank.org/locations/johannesburg-central.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubuntufoodbank.org/locations/johannesburg-central.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.ubuntufoodbank.org/locations/soweto-branch.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubuntufoodbank.org/locations/soweto-branch.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.ubuntufoodbank.org/locations/alexandra-branch.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubuntufoodbank.org/locations/alexandra-branch.html"/>
+  </url>
+
+  <!-- Resources Pages (Future Expansion) -->
+  <url>
+    <loc>https://www.ubuntufoodbank.org/resources/nutrition-guides.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubuntufoodbank.org/resources/nutrition-guides.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.ubuntufoodbank.org/resources/volunteer-handbook.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubuntufoodbank.org/resources/volunteer-handbook.html"/>
+  </url>
+
+  <!-- News/Blog Pages (Future Expansion) -->
+  <url>
+    <loc>https://www.ubuntufoodbank.org/news.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubuntufoodbank.org/news.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.ubuntufoodbank.org/news/impact-stories.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubuntufoodbank.org/news/impact-stories.html"/>
+  </url>
+
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://www.ubuntufoodbank.org/privacy-policy.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubuntufoodbank.org/privacy-policy.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.ubuntufoodbank.org/terms-of-service.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubuntufoodbank.org/terms-of-service.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.ubuntufoodbank.org/annual-reports.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ubuntufoodbank.org/annual-reports.html"/>
+  </url>
+
+</urlset>
