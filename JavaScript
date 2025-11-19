@@ -1,0 +1,105 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formMessage = document.getElementById('formMessage');
+
+    // Real-time validation
+    const inputs = contactForm.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+        input.addEventListener('blur', validateField);
+        input.addEventListener('input', clearError);
+    });
+
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        if (validateForm()) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            // Simulate AJAX submission
+            setTimeout(() => {
+                formMessage.textContent = 'Thank you! Your message has been sent successfully.';
+                formMessage.className = 'form-message success';
+                contactForm.reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                
+                // Clear message after 5 seconds
+                setTimeout(() => {
+                    formMessage.textContent = '';
+                    formMessage.className = 'form-message';
+                }, 5000);
+            }, 2000);
+        }
+    });
+
+    function validateForm() {
+        let isValid = true;
+        inputs.forEach(input => {
+            if (!validateField({ target: input })) {
+                isValid = false;
+            }
+        });
+        return isValid;
+    }
+
+    function validateField(e) {
+        const field = e.target;
+        const value = field.value.trim();
+        const errorElement = document.getElementById(field.id + 'Error');
+
+        // Clear previous error
+        clearError(e);
+
+        // Required field validation
+        if (field.hasAttribute('required') && !value) {
+            showError(errorElement, 'This field is required');
+            return false;
+        }
+
+        // Email validation
+        if (field.type === 'email' && value) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
+                showError(errorElement, 'Please enter a valid email address');
+                return false;
+            }
+        }
+
+        // Phone validation
+        if (field.id === 'phone' && value) {
+            const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
+            if (!phoneRegex.test(value)) {
+                showError(errorElement, 'Please enter a valid phone number');
+                return false;
+            }
+        }
+
+        // Name validation
+        if (field.id === 'fullname' && value) {
+            const nameRegex = /^[A-Za-z\s]+$/;
+            if (!nameRegex.test(value)) {
+                showError(errorElement, 'Name can only contain letters and spaces');
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    function showError(errorElement, message) {
+        if (errorElement) {
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+    }
+
+    function clearError(e) {
+        const errorElement = document.getElementById(e.target.id + 'Error');
+        if (errorElement) {
+            errorElement.textContent = '';
+            errorElement.style.display = 'none';
+        }
+    }
+});
